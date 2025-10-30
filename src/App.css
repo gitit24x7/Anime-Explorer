@@ -1,0 +1,479 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.favorites h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.favorites {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.favorites h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #e50914;
+}
+
+.favorites p {
+  color: #999;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+/* Animation for new favorites being added */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anime-grid > * {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.home {
+  padding: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.inputsearch {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+.inputsearch:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #666;
+}
+
+.Submit-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #e50914;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background-color: #f40612;
+}
+
+
+@media (max-width: 639px) {
+  .home {
+    padding: 1rem 0;
+  }
+
+  .inputsearch {
+    margin-bottom: 1rem;
+  }
+}
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: center;
+  align-items: start;
+  background-color: transparent;
+  min-height: 200px;
+}
+
+.anime-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0),
+    rgba(17, 24, 39, 0.7) 50%,
+    rgba(17, 24, 39, 0.95)
+  );
+  transition: transform 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+}
+
+.anime-poster {
+  position: relative;
+  aspect-ratio: 2/3;
+  width: 100%;
+}
+
+.anime-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.anime-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.anime-card:hover .anime-overlay {
+  opacity: 1;
+}
+
+.favorite-btn {
+  position: relative;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.favorite-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.favorite-btn.active {
+  color: #ff4757;
+}
+
+.rating-select {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.anime-info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.anime-info h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.anime-info p {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.user-rating {
+  color: #ffd700;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.anime-rating{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  color: #ffd166;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.anime-rating .star{
+  color: #ffd166;
+  font-size: 1rem;
+  transform: translateY(-1px);
+}
+
+.anime-rating .score-text{
+  color: #fff;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.35);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.anime-rating {
+  align-self: center; /* when .anime-info is display:flex;flex-direction:column */
+}
+
+@media (max-width: 768px) {
+  .anime-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .anime-card {
+    font-size: 0.9rem;
+    max-width: 250px;
+  }
+
+  .anime-info {
+    padding: 0.75rem;
+  }
+
+  .favorite-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .anime-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .anime-card {
+    max-width: 100%;
+  }
+}
+
+.brand a,
+.navbar-brand a,
+.brand a b {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: black;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;  
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.nav-link {
+  color: #00ff88 !important; 
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+}
+.favorite-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+.about-container h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-section, .features-section, .tech-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+li:before {
+  content: "•";
+  color: #3498db;
+  position: absolute;
+  left: 0;
+}
+
+.footer-container{
+  color: #3498db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color:black;
+}
+
+/* make navbar and footer backgrounds full width (edge-to-edge) */
+.navbar,
+.footer-container {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: 10;
+  height: 50px;
+}
+
+/* keep inner content aligned with your page width */
+.navbar > * ,
+.footer-container > * {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1rem; /* adjust spacing if needed */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* adjust as needed */
+}
